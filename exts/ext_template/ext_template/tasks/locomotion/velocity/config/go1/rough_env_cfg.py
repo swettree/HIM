@@ -79,18 +79,7 @@ class UnitreeGo1RoughEnvCfg(LocomotionVelocityRoughEnvCfg):
         
         self.rewards.stand_still_when_zero_command.weight = -0.5
 
-        self.rewards.base_height_l2.weight = -2.0
-        self.rewards.base_height_l2.params["target_height"] = 0.3
-        self.rewards.base_height_l2.params["asset_cfg"].body_names = ["trunk"]
 
-        self.rewards.feet_slide.weight = 0
-        self.rewards.feet_slide.params["sensor_cfg"].body_names = [".*_foot"]
-        self.rewards.feet_slide.params["asset_cfg"].body_names = [".*_foot"]
-
-        self.rewards.feet_clearance.weight = -0.01
-        self.rewards.feet_clearance.params["target_feet_height"] = -0.2
-
-        self.rewards.action_smoothness_penalty.weight = -0.01
 
         if self.__class__.__name__ == "UnitreeGo1RoughEnvCfg":
             self.disable_zero_weight_rewards()
